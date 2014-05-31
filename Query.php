@@ -124,11 +124,11 @@ class Query
 
     public function execute()
     {
-        if ($this->db === null) {
-            $this->db = DB::getInstance();
+        if ($this->dbConn === null) {
+            $this->dbConn = DbConn::getInstance();
         }
 
-        return $this->db->execQuery($this);
+        return $this->dbConn->execQuery($this);
     }
 
     public function clearSelect()
